@@ -2,9 +2,9 @@
 Databases Week 2 Tutorial
 week2_student.sql
 
-student id:
-student name:
-last modified date:
+student id: 32229070
+student name: Seng Wei Han
+last modified date:8/3/2022
 
 */
 
