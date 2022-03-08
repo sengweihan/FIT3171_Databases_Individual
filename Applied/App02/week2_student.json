@@ -1,3 +1,5 @@
+db.student.insertMany([
+
 {
     "_id": 12489379,
     "firstName": "Gilberto",
@@ -62,3 +64,4 @@
     "phone": "6981280319",
     "email":"Brier.Kilgour@student.monash.edu"
 }
+]);
