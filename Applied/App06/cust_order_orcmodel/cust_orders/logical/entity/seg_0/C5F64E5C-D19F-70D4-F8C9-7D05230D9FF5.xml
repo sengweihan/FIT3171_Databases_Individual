@@ -1,0 +1,60 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C5F64E5C-D19F-70D4-F8C9-7D05230D9FF5" name="PROD_CATEGORY">
+<createdBy>User</createdBy>
+<createdTime>2022-04-05 10:52:34 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="pcat_id" id="C5D04C67-9F10-6879-76FF-DC701271C61E">
+<createdBy>User</createdBy>
+<createdTime>2022-04-05 10:52:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[product_category_name]]></commentInRDBMS>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pcat_name" id="A6D5F384-BBF3-7CB0-9447-574750B370CA">
+<createdBy>User</createdBy>
+<createdTime>2022-04-05 10:52:44 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AA9CD30B-6AA4-0EFC-9C41-80353A3AAEDF" name="PROD_CATEGORY PK">
+<createdBy>User</createdBy>
+<createdTime>2022-04-05 10:53:05 UTC</createdTime>
+<ownerDesignName>cust_orders</ownerDesignName>
+<engineerTo>
+<item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C5D04C67-9F10-6879-76FF-DC701271C61E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

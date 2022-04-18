@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EB50DB3B-6F74-4B87-2251-6B3EA11C7209" name="CUSTOMER">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B19C197F-4647-24A6-C4D5-41383466109B" name="PRODUCT">
 <createdBy>User</createdBy>
-<createdTime>2022-04-05 10:25:06 UTC</createdTime>
+<createdTime>2022-04-05 10:51:29 UTC</createdTime>
 <ownerDesignName>cust_orders</ownerDesignName>
 <engineerTo>
 <item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
@@ -15,10 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cust_no" id="DED50BAE-E634-8C37-4813-959B4664593C">
+<Attribute name="prod_no" id="12D15009-3EE7-8310-41A8-BD8747FFE962">
 <createdBy>User</createdBy>
-<createdTime>2022-04-05 10:25:31 UTC</createdTime>
-<commentInRDBMS><![CDATA[customer_number]]></commentInRDBMS>
+<createdTime>2022-04-05 10:51:40 UTC</createdTime>
 <ownerDesignName>cust_orders</ownerDesignName>
 <engineerTo>
 <item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
@@ -29,10 +28,9 @@
 <dataTypePrecision>7</dataTypePrecision>
 <ownDataTypeParameters>,7,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cust_name" id="FEDC6A8D-7B4E-88EB-E3CD-92FAF614B77A">
+<Attribute name="prod_desc" id="E014A887-A6AF-570C-3CDE-4103245AD4F0">
 <createdBy>User</createdBy>
-<createdTime>2022-04-05 10:25:32 UTC</createdTime>
-<commentInRDBMS><![CDATA[customer_name]]></commentInRDBMS>
+<createdTime>2022-04-05 10:51:40 UTC</createdTime>
 <ownerDesignName>cust_orders</ownerDesignName>
 <engineerTo>
 <item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
@@ -43,66 +41,48 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cust_address" id="D0090D56-84CF-C388-486D-37E6EF105175">
+<Attribute name="prod_unitprice" id="499E5B28-6D96-9864-C0EA-EB00350FC6C5">
 <createdBy>User</createdBy>
-<createdTime>2022-04-05 10:25:32 UTC</createdTime>
-<commentInRDBMS><![CDATA[customer_address]]></commentInRDBMS>
+<createdTime>2022-04-05 10:51:41 UTC</createdTime>
 <ownerDesignName>cust_orders</ownerDesignName>
 <engineerTo>
 <item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cust_phone" id="A4771048-74B3-FAB0-B591-E2B0C4633B84">
+<Attribute name="pcat_id" id="98507868-122C-2254-7CBC-27C34CAF1950">
 <createdBy>User</createdBy>
-<createdTime>2022-04-05 10:25:33 UTC</createdTime>
+<createdTime>2022-04-18 15:07:34 UTC</createdTime>
+<commentInRDBMS><![CDATA[product_category_name]]></commentInRDBMS>
+<generatorID>4EAB9AEA-C7E1-E0D3-431F-9C329DA7D815</generatorID>
 <ownerDesignName>cust_orders</ownerDesignName>
 <engineerTo>
 <item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
+<referedAttribute>C5D04C67-9F10-6879-76FF-DC701271C61E</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="cust_level" id="9EB3EBB7-199C-CD44-80C2-C16996641FEC">
-<createdBy>User</createdBy>
-<createdTime>2022-04-05 10:25:33 UTC</createdTime>
-<commentInRDBMS><![CDATA[customer level G Gold B Bronze S Silver]]></commentInRDBMS>
-<ownerDesignName>cust_orders</ownerDesignName>
-<engineerTo>
-<item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
-</engineerTo>
-<constraintName>chk_custlevel</constraintName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<listOfValues>
-<valueDef value="B" description="Bronze"/>
-<valueDef value="G" description="Gold"/>
-<valueDef value="S" description="Silver"/>
-</listOfValues>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="AF530775-6393-EA1C-7266-F11D73B6AA5A" name="CUSTOMER PK">
+<identifier id="B3E5F490-5D18-5D2E-8B56-B195EFA57F32" name="PRODUCT PK">
 <createdBy>User</createdBy>
-<createdTime>2022-04-05 10:27:48 UTC</createdTime>
+<createdTime>2022-04-05 10:51:54 UTC</createdTime>
 <ownerDesignName>cust_orders</ownerDesignName>
 <engineerTo>
 <item key="618FCDC7-D6ED-BB5C-F631-7A11F32E50DE" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>DED50BAE-E634-8C37-4813-959B4664593C</attributeRef>
+<attributeRef>12D15009-3EE7-8310-41A8-BD8747FFE962</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
