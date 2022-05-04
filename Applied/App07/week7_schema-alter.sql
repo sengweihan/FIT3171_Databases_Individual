@@ -17,7 +17,11 @@ Author:
 --
 -- Place DROP commands at head of schema file
 --
+DROP TABLE ENROLMENT;
 
+DROP TABLE STUDENT;
+
+DROP TABLE UNIT;
 
 
 -- Create Tables
@@ -45,10 +49,15 @@ COMMENT ON COLUMN student.stu_dob IS
 
 /* Add STUDENT constraints here */
 
+ALTER TABLE student
+    ADD CONSTRAINT student_pk PRIMARY KEY (stu_nbr);
+
+ALTER TABLE student ADD CONSTRAINT chk_stunbr CHECK (stu_nbr > 10000000);
+
 /* Add UNIT data types here */
 CREATE TABLE unit (
-    unit_code   ,
-    unit_name   
+    unit_code CHAR(7) NOT NULL,
+    unit_name VARCHAR2(50) NOT NULL
 );
 
 COMMENT ON COLUMN unit.unit_code IS
@@ -58,14 +67,17 @@ COMMENT ON COLUMN unit.unit_name IS
     'Unit name';
 
 /* Add UNIT constraints here */
+ALTER TABLE unit
+    ADD CONSTRAINT unit_pk PRIMARY KEY(unit_code);
 
 /* Add ENROLMENT attributes and data types here */
 CREATE TABLE enrolment (
-    ,
-    ,
-    ,
-    ,
-    ,
+    stu_nbr NUMBER(8) NOT NULL,
+    unit_code CHAR(7) NOT NULL,
+    enrol_year NUMBER(4) NOT NULL,
+    enrol_semester CHAR(1) NOT NULL,
+    enrol_mark NUMBER(3),
+    enrol_grade CHAR(2)
     
 );
 
@@ -88,6 +100,12 @@ COMMENT ON COLUMN enrolment.enrol_grade IS
     'Enrolment grade (letter)';
 
 /* Add ENROLMENT constraints here */
+ALTER TABLE enrolment
+    ADD 
+    (CONSTRAINT pk_enrolment PRIMARY KEY (stu_nbr,unit_code,enrol_year,enrol_semester),
+    CONSTRAINT fk_enrolment_student FOREIGN KEY (stu_nbr) REFERENCES student(stu_nbr),
+    CONSTRAINT fk_enrolment_unit FOREIGN KEY (unit_code) REFERENCES unit(unit_code),
+    CONSTRAINT chk_enrolment_semester CHECK (enrol_semester in (1,2,3)));
 
 SPOOL OFF
 
