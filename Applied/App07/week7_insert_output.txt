@@ -1,133 +1,619 @@
 SQL> 
-SQL> -- 7.3.1 Basic INSERT statement
+SQL> /*
+SQL>Databases Week 7 Applied Class Sample Solution
+SQL>week7_insert.sql
+SQL>
+SQL>Databases units
+SQL>Author: FIT Database Teaching Team
+SQL>License: Copyright © Monash University, unless otherwise stated. All Rights Reserved.
+SQL>COPYRIGHT WARNING
+SQL>Warning
+SQL>This material is protected by copyright. For use within Monash University only. NOT FOR RESALE.
+SQL>Do not remove this notice. 
+SQL>*/
 SQL> 
-SQL> INSERT INTO student VALUES 
-  2  (11111111,    'Bloggs',      'Fred',        to_date('1-Jan-2003', 'dd-Mon-yyyy'));
+SQL> -- 7.3.1
+SQL> -- Basic INSERT statement
+SQL> -- ================================================================
+SQL> 
+SQL> INSERT INTO student VALUES (
+  2      11111111,
+  3      'Bloggs',
+  4      'Fred',
+  5      to_date('01-Jan-2003','dd-Mon-yyyy')
+  6  );
 
 1 row inserted.
 
 SQL> 
-SQL> INSERT INTO student VALUES 
-  2  (11111112,    'Nice',        'Nick',        to_date('10-Oct-2004','dd-Mon-yyyy'));
+SQL> INSERT INTO student VALUES (
+  2      11111112,
+  3      'Nice',
+  4      'Nick',
+  5      to_date('10-Oct-2004','dd-Mon-yyyy')
+  6  );
 
 1 row inserted.
 
 SQL> 
-SQL> INSERT INTO student VALUES 
-  2  (11111113,    'Wheat',       'Wendy',       to_date('5-May-2005','dd-Mon-yyyy' ));
+SQL> INSERT INTO student VALUES (
+  2      11111113,
+  3      'Wheat',
+  4      'Wendy',
+  5      to_date('05-May-2005','dd-Mon-yyyy')
+  6  );
 
 1 row inserted.
 
 SQL> 
-SQL> INSERT INTO student VALUES 
-  2  (11111114,    'Sheen',       'Cindy',       to_date('25-Dec-2004','dd-Mon-yyyy'));
+SQL> INSERT INTO student VALUES (
+  2      11111114,
+  3      'Sheen',
+  4      'Cindy',
+  5      to_date('25-Dec-2004','dd-Mon-yyyy')
+  6  );
 
 1 row inserted.
 
 SQL> 
-SQL> 
-SQL> 
-SQL> 
-SQL> INSERT INTO unit VALUES
-  2  ('FIT9999'   , 'FIT Last Unit');
+SQL> INSERT INTO unit VALUES (
+  2      'FIT9999',
+  3      'FIT Last Unit'
+  4  );
 
 1 row inserted.
 
 SQL> 
-SQL> INSERT INTO unit VALUES
-  2  ('FIT9132'     ,'Introduction to Databases');
+SQL> INSERT INTO unit VALUES (
+  2      'FIT9132',
+  3      'Introduction to Databases'
+  4  );
 
 1 row inserted.
 
 SQL> 
-SQL> INSERT INTO unit VALUES
-  2  ('FIT9161'     ,'Project');
+SQL> INSERT INTO unit VALUES (
+  2      'FIT9161',
+  3      'Project'
+  4  );
 
 1 row inserted.
 
 SQL> 
-SQL> INSERT INTO unit VALUES
-  2  ('FIT5111'     ,'Student''s Life');
-
-1 row inserted.
-
-SQL> 
-SQL> 
-SQL> 
-SQL> INSERT INTO enrolment VALUES
-  2  (11111111,    'FIT9132',     2020,        '1',               35,          'N');
-
-1 row inserted.
-
-SQL> 
-SQL> INSERT INTO enrolment VALUES
-  2  (11111111,    'FIT9161',     2020,        '1',               61,          'C');
-
-1 row inserted.
-
-SQL> 
-SQL> INSERT INTO enrolment VALUES
-  2  (11111111,    'FIT9132',     2020,        '2',               42,          'N');
-
-1 row inserted.
-
-SQL> 
-SQL> INSERT INTO enrolment VALUES
-  2  (11111111,    'FIT5111',     2020,        '2',               76,          'D');
+SQL> INSERT INTO unit VALUES (
+  2      'FIT5111',
+  3      'Student''s Life'
+  4  );
 
 1 row inserted.
 
 SQL> 
 SQL> 
-SQL> commit;
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111111,
+  3      'FIT9132',
+  4      2020,
+  5      '1',
+  6      35,
+  7      'N'
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111111,
+  3      'FIT9161',
+  4      2020,
+  5      '1',
+  6      61,
+  7      'C'
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111111,
+  3      'FIT9132',
+  4      2020,
+  5      '2',
+  6      42,
+  7      'N'
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111111,
+  3      'FIT5111',
+  4      2020,
+  5      '2',
+  6      76,
+  7      'D'
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111111,
+  3      'FIT9132',
+  4      2021,
+  5      '1',
+  6      NULL,
+  7      NULL
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111112,
+  3      'FIT9132',
+  4      2020,
+  5      '2',
+  6      83,
+  7      'HD'
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111112,
+  3      'FIT9161',
+  4      2020,
+  5      '2',
+  6      79,
+  7      'D'
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111113,
+  3      'FIT9132',
+  4      2021,
+  5      '1',
+  6      NULL,
+  7      NULL
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      11111113,
+  3      'FIT5111',
+  4      2021,
+  5      '1',
+  6      NULL,
+  7      NULL
+  8  );
+
+1 row inserted.
+
+SQL> 
+SQL> /*
+SQL>  A different approach to inserting is illustrated below by using a list of
+SQL>  the attributes you which to insert, any not listed will be made null.
+SQL>
+SQL>  This approach is also useful if the data you have contains the attributes in a
+SQL>  different order (for example you are working with data from another source) - the
+SQL>  attributes are simply listed in the order they appear in the data itself
+SQL>
+SQL>*/
+SQL> 
+SQL> INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (
+  2      11111114,
+  3      'FIT9132',
+  4      2021,
+  5      '1'
+  6  );
+
+1 row inserted.
+
+SQL> INSERT INTO enrolment (stu_nbr, unit_code, enrol_year, enrol_semester) VALUES (
+  2      11111114,
+  3      'FIT5111',
+  4      2021,
+  5      '1'
+  6  );
+
+1 row inserted.
+
+SQL> 
+SQL> COMMIT;
 
 Commit complete.
 
 SQL> 
-SQL> 
-SQL> -- 7.3.2 Using SEQUENCEs in an INSERT statement
-SQL> drop sequence student_seq ;
+SQL> -- 7.3.2
+SQL> -- Using seqeunces for INSERT
+SQL> -- ================================================================
+SQL> -- Create sequence
+SQL> DROP SEQUENCE student_seq;
 
 Sequence STUDENT_SEQ dropped.
 
-SQL> create sequence student_seq start with 11111115 increment by 1;
+SQL> 
+SQL> CREATE SEQUENCE student_seq START WITH 11111115 INCREMENT BY 1;
 
 Sequence STUDENT_SEQ created.
 
 SQL> 
-SQL> INSERT INTO student VALUES 
-  2  (student_seq.nextval ,    'John',      'Doe',        to_date('1-Jan-2003', 'dd-Mon-yyyy'));
+SQL> SELECT
+  2      *
+  3  FROM
+  4      cat;
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+STUDENT_SEQ                                                                                                                      SEQUENCE   
+BIN$2bO/hovfZj7gU68YwoIoGA==$0                                                                                                   TABLE      
+BIN$3j3yiLH1eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLH9eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLHoeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLHweoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLI0eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLI8eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIFeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIKeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLISeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+BIN$3j3yiLIaeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIfeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIneoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIveoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJEeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJJeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJOeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJWeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJeeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJjeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJoeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+BIN$3jL5vrb/esXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrb3esXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbYesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbdesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbiesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbnesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbvesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbyesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrcEesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrcJesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrcResXgU68YwoKenA==$0                                                                                                   TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+BIN$3jL5vrcWesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3qJN5TT9Vs/gU68YwoJX/w==$0                                                                                                   TABLE      
+BIN$3qJN5TUFVs/gU68YwoJX/w==$0                                                                                                   TABLE      
+BIN$3qJN5TUKVs/gU68YwoJX/w==$0                                                                                                   TABLE      
+CUSTBALANCE                                                                                                                      TABLE      
+CUSTBALANCE2                                                                                                                     TABLE      
+CUSTOMER                                                                                                                         TABLE      
+ENROLMENT                                                                                                                        TABLE      
+FIT5111_STUDENT                                                                                                                  TABLE      
+ORDERLINE                                                                                                                        TABLE      
+ORDERS                                                                                                                           TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+PRODUCT                                                                                                                          TABLE      
+PROD_CATEGORY                                                                                                                    TABLE      
+STUDENT                                                                                                                          TABLE      
+UNIT                                                                                                                             TABLE      
+
+48 rows selected. 
+
+SQL> -- cat refers to your Oracle catalogue, the objects which you own
+SQL> 
+SQL> -- Insert Mickey Mouse
+SQL> 
+SQL> INSERT INTO student VALUES (
+  2      student_seq.NEXTVAL,
+  3      'Mouse',
+  4      'Mickey',
+  5      to_date('03-Feb-2004','dd-Mon-yyyy')
+  6  );
 
 1 row inserted.
 
 SQL> 
+SQL> SELECT
+  2      *
+  3  FROM
+  4      student;
+
+   STU_NBR STU_LNAME                                          STU_FNAME                                          STU_DOB  
+---------- -------------------------------------------------- -------------------------------------------------- ---------
+  11111111 Bloggs                                             Fred                                               01-JAN-03
+  11111112 Nice                                               Nick                                               10-OCT-04
+  11111113 Wheat                                              Wendy                                              05-MAY-05
+  11111114 Sheen                                              Cindy                                              25-DEC-04
+  11111115 Mouse                                              Mickey                                             03-FEB-04
+
 SQL> 
+SQL> -- Add an enrolment
 SQL> 
-SQL> INSERT INTO enrolment VALUES
-  2  (student_seq.currval ,    (SELECT unit_code from unit where unit_name = 'Introduction to Databases'),     2021,        '1',               76,          'D');
+SQL> INSERT INTO enrolment VALUES (
+  2      student_seq.CURRVAL,
+  3      'FIT9132',
+  4      2021,
+  5      '1',
+  6      NULL,
+  7      NULL
+  8  );
 
 1 row inserted.
 
 SQL> 
-SQL> commit;
+SQL> COMMIT;
 
 Commit complete.
 
 SQL> 
-SQL> -- 7.3.4 Creating a table and inserting data as a single SQL statement.
+SQL> SELECT
+  2      *
+  3  FROM
+  4      enrolment;
+
+   STU_NBR UNIT_CO ENROL_YEAR E ENROL_MARK EN
+---------- ------- ---------- - ---------- --
+  11111111 FIT9132       2020 1         35 N 
+  11111111 FIT9161       2020 1         61 C 
+  11111111 FIT9132       2020 2         42 N 
+  11111111 FIT5111       2020 2         76 D 
+  11111111 FIT9132       2021 1              
+  11111112 FIT9132       2020 2         83 HD
+  11111112 FIT9161       2020 2         79 D 
+  11111113 FIT9132       2021 1              
+  11111113 FIT5111       2021 1              
+  11111114 FIT9132       2021 1              
+  11111114 FIT5111       2021 1              
+
+   STU_NBR UNIT_CO ENROL_YEAR E ENROL_MARK EN
+---------- ------- ---------- - ---------- --
+  11111115 FIT9132       2021 1              
+
+12 rows selected. 
+
 SQL> 
-SQL> DROP TABLE FIT5111_STUDENT;
+SQL> -- 7.3.3
+SQL> -- Advanced Insert
+SQL> -- ================================================================
+SQL> 
+SQL> INSERT INTO student VALUES (
+  2      student_seq.NEXTVAL,
+  3      'Last',
+  4      'First',
+  5      to_date('01-Jan-2005','dd-Mon-yyyy')
+  6  );
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (
+  2      student_seq.CURRVAL,
+  3      (
+  4          SELECT
+  5              unit_code
+  6          FROM
+  7              unit
+  8          WHERE
+  9              unit_name = 'Introduction to Databases'
+ 10      ),
+ 11      2021,
+ 12      '1',
+ 13      NULL,
+ 14      NULL
+ 15  );
+
+1 row inserted.
+
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> SELECT
+  2      *
+  3  FROM
+  4      student;
+
+   STU_NBR STU_LNAME                                          STU_FNAME                                          STU_DOB  
+---------- -------------------------------------------------- -------------------------------------------------- ---------
+  11111111 Bloggs                                             Fred                                               01-JAN-03
+  11111112 Nice                                               Nick                                               10-OCT-04
+  11111113 Wheat                                              Wendy                                              05-MAY-05
+  11111114 Sheen                                              Cindy                                              25-DEC-04
+  11111115 Mouse                                              Mickey                                             03-FEB-04
+  11111116 Last                                               First                                              01-JAN-05
+
+6 rows selected. 
+
+SQL> 
+SQL> SELECT
+  2      *
+  3  FROM
+  4      enrolment;
+
+   STU_NBR UNIT_CO ENROL_YEAR E ENROL_MARK EN
+---------- ------- ---------- - ---------- --
+  11111111 FIT9132       2020 1         35 N 
+  11111111 FIT9161       2020 1         61 C 
+  11111111 FIT9132       2020 2         42 N 
+  11111111 FIT5111       2020 2         76 D 
+  11111111 FIT9132       2021 1              
+  11111112 FIT9132       2020 2         83 HD
+  11111112 FIT9161       2020 2         79 D 
+  11111113 FIT9132       2021 1              
+  11111113 FIT5111       2021 1              
+  11111114 FIT9132       2021 1              
+  11111114 FIT5111       2021 1              
+
+   STU_NBR UNIT_CO ENROL_YEAR E ENROL_MARK EN
+---------- ------- ---------- - ---------- --
+  11111115 FIT9132       2021 1              
+  11111116 FIT9132       2021 1              
+
+13 rows selected. 
+
+SQL> 
+SQL> -- 7.3.4
+SQL> -- Create table and Insert data from a single SQL statement
+SQL> -- ================================================================
+SQL> 
+SQL> DROP TABLE fit5111_student;
 
 Table FIT5111_STUDENT dropped.
 
 SQL> 
-SQL> CREATE TABLE FIT5111_STUDENT 
-  2  as select * 
-  3  from enrolment 
-  4  where unit_code = 'FIT5111';
+SQL> CREATE TABLE fit5111_student
+  2      AS
+  3          SELECT
+  4              *
+  5          FROM
+  6              enrolment
+  7          WHERE
+  8              unit_code = 'FIT5111';
 
 Table FIT5111_STUDENT created.
 
 SQL> 
+SQL> COMMENT ON COLUMN fit5111_student.stu_nbr IS
+  2      'Student number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN fit5111_student.unit_code IS
+  2      'Unit code';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN fit5111_student.enrol_year IS
+  2      'Enrolment year';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN fit5111_student.enrol_semester IS
+  2      'Enrolment semester';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN fit5111_student.enrol_mark IS
+  2      'Enrolment mark (real)';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN fit5111_student.enrol_grade IS
+  2      'Enrolment grade (letter)';
+
+Comment created.
+
+SQL> 
+SQL> --Check if the table exist
+SQL> 
+SQL> SELECT
+  2      *
+  3  FROM
+  4      cat;
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+STUDENT_SEQ                                                                                                                      SEQUENCE   
+BIN$2bO/hovfZj7gU68YwoIoGA==$0                                                                                                   TABLE      
+BIN$3j3yiLH1eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLH9eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLHoeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLHweoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLI0eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLI8eoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIFeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIKeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLISeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+BIN$3j3yiLIaeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIfeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIneoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLIveoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJEeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJJeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJOeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJWeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJeeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJjeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+BIN$3j3yiLJoeoDgU68YwoIxHA==$0                                                                                                   TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+BIN$3jL5vrb/esXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrb3esXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbYesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbdesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbiesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbnesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbvesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrbyesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrcEesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrcJesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3jL5vrcResXgU68YwoKenA==$0                                                                                                   TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+BIN$3jL5vrcWesXgU68YwoKenA==$0                                                                                                   TABLE      
+BIN$3qJN5TT9Vs/gU68YwoJX/w==$0                                                                                                   TABLE      
+BIN$3qJN5TUFVs/gU68YwoJX/w==$0                                                                                                   TABLE      
+BIN$3qJN5TUKVs/gU68YwoJX/w==$0                                                                                                   TABLE      
+BIN$3qJN5TUPVs/gU68YwoJX/w==$0                                                                                                   TABLE      
+CUSTBALANCE                                                                                                                      TABLE      
+CUSTBALANCE2                                                                                                                     TABLE      
+CUSTOMER                                                                                                                         TABLE      
+ENROLMENT                                                                                                                        TABLE      
+FIT5111_STUDENT                                                                                                                  TABLE      
+ORDERLINE                                                                                                                        TABLE      
+
+TABLE_NAME                                                                                                                       TABLE_TYPE 
+-------------------------------------------------------------------------------------------------------------------------------- -----------
+ORDERS                                                                                                                           TABLE      
+PRODUCT                                                                                                                          TABLE      
+PROD_CATEGORY                                                                                                                    TABLE      
+STUDENT                                                                                                                          TABLE      
+UNIT                                                                                                                             TABLE      
+
+49 rows selected. 
+
+SQL> 
+SQL> --List the contents of the table
+SQL> 
+SQL> SELECT
+  2      *
+  3  FROM
+  4      fit5111_student;
+
+   STU_NBR UNIT_CO ENROL_YEAR E ENROL_MARK EN
+---------- ------- ---------- - ---------- --
+  11111111 FIT5111       2020 2         76 D 
+  11111113 FIT5111       2021 1              
+  11111114 FIT5111       2021 1              
+
 SQL> 
 SQL> SPOOL OFF
