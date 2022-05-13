@@ -73,13 +73,25 @@ ALTER TABLE competitor ADD CONSTRAINT chk_comp_ec_relationship CHECK(comp_ec_rel
 
 
 
-
-
-
-
 -- EMERCONTACT
+CREATE TABLE emercontact (
+    ec_phone CHAR(10) NOT NULL,
+    ec_fname VARCHAR2(30),
+    ec_lname VARCHAR2(30)
+);
 
+COMMENT ON COLUMN emercontact.ec_phone IS
+    'Emergency contact''s phone number (unique identifier)';
 
+COMMENT ON COLUMN emercontact.ec_fname IS
+    'Emergency contact''s first name';
+
+COMMENT ON COLUMN emercontact.ec_lname IS
+    'Emergency contact''s last name';
+
+ALTER TABLE emercontact ADD CONSTRAINT emercontact_pk PRIMARY KEY(ec_phone);
+    
+    
 
 --ENTRY
 
