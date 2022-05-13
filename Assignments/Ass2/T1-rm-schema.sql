@@ -201,9 +201,8 @@ ALTER TABLE team
         REFERENCES charity ( char_id );
 
 ALTER TABLE team
-    ADD CONSTRAINT entry_team_fk FOREIGN KEY ( entry_no )
-        REFERENCES entry ( entry_no );
+    ADD CONSTRAINT entry_team_fk FOREIGN KEY ( entry_no,
+                                               event_id )
+        REFERENCES entry ( entry_no,
+                           event_id );
 
-ALTER TABLE team
-    ADD CONSTRAINT entry_team_fk FOREIGN KEY ( event_id )
-        REFERENCES entry ( event_id );
