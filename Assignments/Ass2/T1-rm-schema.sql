@@ -62,7 +62,18 @@ COMMENT ON COLUMN competitor.comp_ec_relationship IS
 COMMENT ON COLUMN competitor.ec_phone IS 
     'Emergency contact''s phone number (unique identifier)';
 
-    
+  
+ALTER TABLE competitor ADD CONSTRAINT competitor_pk PRIMARY KEY(comp_no);
+
+ALTER TABLE competitor ADD CONSTRAINT chk_comp_gender CHECK (comp_gender IN ('M', 'F', 'U'));
+
+ALTER TABLE competitor ADD CONSTRAINT chk_comp_unistatus CHECK (comp_unistatus IN ('Y', 'N'));
+
+ALTER TABLE competitor ADD CONSTRAINT chk_comp_ec_relationship CHECK(comp_ec_relationship IN ('P', 'G', 'T', 'F'));
+
+
+
+
 
 
 
@@ -79,3 +90,5 @@ COMMENT ON COLUMN competitor.ec_phone IS
 
 
 -- Add all missing FK Constraints below here
+ALTER TABLE competitor ADD CONSTRAINT emercontact_competitor_fk FOREIGN KEY (ec_phone) REFERENCES emercontact (ec_phone);
+
