@@ -165,7 +165,7 @@ COMMENT ON COLUMN team.char_id IS
     'Charity unique identifier';
 
 
-ALTER TAble team add CONSTRAINT TEAM_PK PRIMARY KEY ( TEAM_ID ) ;
+ALTER TABLE team add CONSTRAINT TEAM_PK PRIMARY KEY ( TEAM_ID ) ;
 
 ALTER TABLE team ADD CONSTRAINT team_nk UNIQUE ( team_name,
                                                  carn_date );

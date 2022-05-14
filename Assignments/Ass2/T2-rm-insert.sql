@@ -251,7 +251,7 @@ INSERT INTO entry VALUES (
     TO_DATE('24-SEP-2021 10:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('24-SEP-2021 10:35:15', 'DD-MON-YYYY HH24:MI:SS'),
     1,
-    NULL,
+    1,
     NULL
 );
 
@@ -262,7 +262,7 @@ INSERT INTO entry VALUES (
     TO_DATE('24-SEP-2021 10:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('24-SEP-2021 10:45:25', 'DD-MON-YYYY HH24:MI:SS'),
     2,
-    NULL,
+    1,
     3
 );
 
@@ -272,7 +272,7 @@ INSERT INTO entry VALUES (
     TO_DATE('24-SEP-2021 10:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('24-SEP-2021 10:30:45', 'DD-MON-YYYY HH24:MI:SS'),
     3,
-    NULL,
+    1,
     2
 );
 
@@ -282,7 +282,7 @@ INSERT INTO entry VALUES (
     TO_DATE('24-SEP-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('24-SEP-2021 10:14:11', 'DD-MON-YYYY HH24:MI:SS'),
     4,
-    NULL,
+    1,
     4
 );
 
@@ -312,7 +312,7 @@ INSERT INTO entry VALUES (
     TO_DATE('01-OCT-2021 09:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('01-OCT-2021 10:02:17', 'DD-MON-YYYY HH24:MI:SS'),
     1,
-    NULL,
+    2,
     4
 );
 
@@ -332,7 +332,7 @@ INSERT INTO entry VALUES (
     TO_DATE('01-OCT-2021 09:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('01-OCT-2021 09:58:45', 'DD-MON-YYYY HH24:MI:SS'),
     3,
-    NULL,
+    2,
     NULL
 );
 
@@ -342,7 +342,7 @@ INSERT INTO entry VALUES (
     TO_DATE('01-OCT-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('01-OCT-2021 10:11:25', 'DD-MON-YYYY HH24:MI:SS'),
     4,
-    NULL,
+    2,
     2
 );
 
@@ -372,7 +372,7 @@ INSERT INTO entry VALUES (
     TO_DATE('01-OCT-2021 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('01-OCT-2021 10:25:26', 'DD-MON-YYYY HH24:MI:SS'),
     6,
-    NULL,
+    2,
     3
 );
 
@@ -412,7 +412,7 @@ INSERT INTO entry VALUES (
     TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('05-FEB-2022 09:28:15', 'DD-MON-YYYY HH24:MI:SS'),
     2,
-    NULL,
+    3,
     1
 );
 
@@ -422,7 +422,7 @@ INSERT INTO entry VALUES (
     TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('05-FEB-2022 09:15:48', 'DD-MON-YYYY HH24:MI:SS'),
     3,
-    NULL,
+    3,
     4
 );
 
@@ -454,7 +454,7 @@ INSERT INTO entry VALUES (
     NULL,
     NULL,
     10,
-    NULL,
+    3,
     2
 );
 
@@ -465,7 +465,7 @@ INSERT INTO entry VALUES (
     TO_DATE('05-FEB-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('05-FEB-2022 10:05:13', 'DD-MON-YYYY HH24:MI:SS'),
     11,
-    NULL,
+    3,
     1
 );
 
@@ -485,7 +485,7 @@ INSERT INTO entry VALUES (
     TO_DATE('14-MAR-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('14-MAR-2022 08:51:29', 'DD-MON-YYYY HH24:MI:SS'),
     13,
-    NULL,
+    4,
     NULL
 );
 
@@ -496,7 +496,7 @@ INSERT INTO entry VALUES (
     TO_DATE('14-MAR-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('14-MAR-2022 08:47:42', 'DD-MON-YYYY HH24:MI:SS'),
     15,
-    NULL,
+    4,
     1
 );
 
@@ -518,7 +518,7 @@ INSERT INTO entry VALUES (
     TO_DATE('29-MAY-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('29-MAY-2022 09:27:11', 'DD-MON-YYYY HH24:MI:SS'),
     2,
-    NULL,
+    5,
     1
 );
 
@@ -528,7 +528,7 @@ INSERT INTO entry VALUES (
     TO_DATE('29-MAY-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('29-MAY-2022 10:28:33', 'DD-MON-YYYY HH24:MI:SS'),
     5,
-    NULL,
+    5,
     2
 );
 
@@ -549,7 +549,7 @@ INSERT INTO entry VALUES (
     TO_DATE('29-MAY-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
     TO_DATE('29-MAY-2022 11:20:27', 'DD-MON-YYYY HH24:MI:SS'),
     10,
-    NULL,
+    5,
     1
 );
 
@@ -558,4 +558,56 @@ INSERT INTO entry VALUES (
 -- Have at least 2 teams with more than 2 members
 -- At least one team with the same name in different carnivals
 -- =======================================
+INSERT INTO team VALUES (
+    1,
+    'Warriors',
+    TO_DATE('24/SEP/2021', 'DD/MON/YYYY'),
+    4,
+    1,
+    2,
+    4
+);
 
+
+INSERT INTO team VALUES (
+    2,
+    'Warriors',
+    TO_DATE('01/OCT/2021', 'DD/MON/YYYY'),
+    4,
+    3,
+    3,
+    1
+);
+
+INSERT INTO team VALUES (
+    3,
+    'Titans',
+    TO_DATE('05/FEB/2022', 'DD/MON/YYYY'),
+    4,
+    6,
+    2,
+    2
+);
+
+INSERT INTO team VALUES (
+    4,
+    'Rangers',
+    TO_DATE('14/MAR/2022', 'DD/MON/YYYY'),
+    2,
+    10,
+    2,
+    3
+);
+
+
+INSERT INTO team VALUES (
+    5,
+    'Giants',
+    TO_DATE('29/May/2022', 'DD/MON/YYYY'),
+    3,
+    13,
+    1,
+    4
+);
+    
+COMMIT;
