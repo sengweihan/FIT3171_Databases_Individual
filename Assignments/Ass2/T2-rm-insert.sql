@@ -248,8 +248,8 @@ INSERT INTO competitor VALUES (
 INSERT INTO entry VALUES (
     1,
     1,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:30', 'HH:MI'),
+    TO_DATE('24-SEP-2021 10:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('24-SEP-2021 10:35:15', 'DD-MON-YYYY HH24:MI:SS'),
     1,
     NULL,
     NULL
@@ -259,8 +259,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     1,
     2,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:30', 'HH:MI'),
+    TO_DATE('24-SEP-2021 10:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('24-SEP-2021 10:45:25', 'DD-MON-YYYY HH24:MI:SS'),
     2,
     NULL,
     3
@@ -269,8 +269,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     1,
     3,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:30', 'HH:MI'),
+    TO_DATE('24-SEP-2021 10:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('24-SEP-2021 10:30:45', 'DD-MON-YYYY HH24:MI:SS'),
     3,
     NULL,
     2
@@ -279,8 +279,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     2,
     1,
-    TO_DATE('06:30', 'HH:MI'),
-    TO_DATE('07:30', 'HH:MI'),
+    TO_DATE('24-SEP-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('24-SEP-2021 10:14:11', 'DD-MON-YYYY HH24:MI:SS'),
     4,
     NULL,
     4
@@ -289,8 +289,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     2,
     2,
-    TO_DATE('06:30', 'HH:MI'),
-    TO_DATE('07:30', 'HH:MI'),
+    TO_DATE('24-SEP-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('24-SEP-2021 10:24:37', 'DD-MON-YYYY HH24:MI:SS'),
     5,
     NULL,
     NULL
@@ -299,8 +299,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     2,
     3,
-    TO_DATE('06:30', 'HH:MI'),
-    TO_DATE('07:30', 'HH:MI'),
+    TO_DATE('24-SEP-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('24-SEP-2021 10:28:47', 'DD-MON-YYYY HH24:MI:SS'),
     6,
     NULL,
     1
@@ -309,8 +309,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     3,
     1,
-    TO_DATE('07:30', 'HH:MI'),
-    TO_DATE('08:30', 'HH:MI'),
+    TO_DATE('01-OCT-2021 09:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:02:17', 'DD-MON-YYYY HH24:MI:SS'),
     1,
     NULL,
     4
@@ -319,8 +319,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     3,
     2,
-    TO_DATE('07:30', 'HH:MI'),
-    TO_DATE('08:30', 'HH:MI'),
+    TO_DATE('01-OCT-2021 09:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:08:27', 'DD-MON-YYYY HH24:MI:SS'),
     2,
     NULL,
     2
@@ -329,8 +329,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     3,
     3,
-    TO_DATE('07:30', 'HH:MI'),
-    TO_DATE('08:30', 'HH:MI'),
+    TO_DATE('01-OCT-2021 09:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 09:58:45', 'DD-MON-YYYY HH24:MI:SS'),
     3,
     NULL,
     NULL
@@ -339,8 +339,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     4,
     1,
-    TO_DATE('06:30', 'HH:MI'),
-    TO_DATE('07:30', 'HH:MI'),
+    TO_DATE('01-OCT-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:11:25', 'DD-MON-YYYY HH24:MI:SS'),
     4,
     NULL,
     2
@@ -349,8 +349,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     4,
     2,
-    TO_DATE('06:30', 'HH:MI'),
-    TO_DATE('07:30', 'HH:MI'),
+    TO_DATE('01-OCT-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:15:11', 'DD-MON-YYYY HH24:MI:SS'),
     5,
     NULL,
     3
@@ -359,8 +359,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     4,
     3,
-    TO_DATE('06:30', 'HH:MI'),
-    TO_DATE('07:30', 'HH:MI'),
+    TO_DATE('01-OCT-2021 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:32:30', 'DD-MON-YYYY HH24:MI:SS'),
     7,
     NULL,
     2
@@ -369,8 +369,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     5,
     1,
-    TO_DATE('06:00', 'HH:MI'),
-    TO_DATE('07:00', 'HH:MI'),
+    TO_DATE('01-OCT-2021 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:25:26', 'DD-MON-YYYY HH24:MI:SS'),
     6,
     NULL,
     3
@@ -379,8 +379,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     5,
     2,
-    TO_DATE('06:00', 'HH:MI'),
-    TO_DATE('07:00', 'HH:MI'),
+    TO_DATE('01-OCT-2021 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:18:17', 'DD-MON-YYYY HH24:MI:SS'),
     8,
     NULL,
     1
@@ -389,8 +389,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     5,
     3,
-    TO_DATE('06:00', 'HH:MI'),
-    TO_DATE('07:00', 'HH:MI'),
+    TO_DATE('01-OCT-2021 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('01-OCT-2021 10:41:57', 'DD-MON-YYYY HH24:MI:SS'),
     9,
     NULL,
     4
@@ -399,8 +399,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     6,
     1,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:00', 'HH:MI'),
+    TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('05-FEB-2022 09:23:11', 'DD-MON-YYYY HH24:MI:SS'),
     1,
     NULL,
     3
@@ -409,8 +409,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     6,
     2,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:00', 'HH:MI'),
+    TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('05-FEB-2022 09:28:15', 'DD-MON-YYYY HH24:MI:SS'),
     2,
     NULL,
     1
@@ -419,8 +419,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     6,
     3,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:00', 'HH:MI'),
+    TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('05-FEB-2022 09:15:48', 'DD-MON-YYYY HH24:MI:SS'),
     3,
     NULL,
     4
@@ -430,8 +430,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     7,
     1,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:00', 'HH:MI'),
+    TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('05-FEB-2022 09:33:27', 'DD-MON-YYYY HH24:MI:SS'),
     4,
     NULL,
     NULL
@@ -440,8 +440,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     7,
     2,
-    TO_DATE('07:00', 'HH:MI'),
-    TO_DATE('08:00', 'HH:MI'),
+    TO_DATE('05-FEB-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('05-FEB-2022 09:28:17', 'DD-MON-YYYY HH24:MI:SS'),
     5,
     NULL,
     1
@@ -462,8 +462,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     8,
     2,
-    NULL,
-    NULL,
+    TO_DATE('05-FEB-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('05-FEB-2022 10:05:13', 'DD-MON-YYYY HH24:MI:SS'),
     11,
     NULL,
     1
@@ -482,8 +482,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     10,
     1,
-    TO_DATE('06:30','HH:MI'),
-    TO_DATE('07:30','HH:MI'),
+    TO_DATE('14-MAR-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('14-MAR-2022 08:51:29', 'DD-MON-YYYY HH24:MI:SS'),
     13,
     NULL,
     NULL
@@ -493,8 +493,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     10,
     2,
-    TO_DATE('06:30','HH:MI'),
-    TO_DATE('07:30','HH:MI'),
+    TO_DATE('14-MAR-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('14-MAR-2022 08:47:42', 'DD-MON-YYYY HH24:MI:SS'),
     15,
     NULL,
     1
@@ -503,8 +503,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     11,
     1,
-    TO_DATE('06:00','HH:MI'),
-    TO_DATE('07:00','HH:MI'),
+    TO_DATE('14-MAR-2022 08:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('14-MAR-2022 14:55:12', 'DD-MON-YYYY HH24:MI:SS'),
     14,
     NULL,
     3
@@ -515,8 +515,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     12,
     1,
-    TO_DATE('06:00','HH:MI'),
-    TO_DATE('07:00','HH:MI'),
+    TO_DATE('29-MAY-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('29-MAY-2022 09:27:11', 'DD-MON-YYYY HH24:MI:SS'),
     2,
     NULL,
     1
@@ -525,8 +525,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     13,
     1,
-    TO_DATE('06:00','HH:MI'),
-    TO_DATE('07:45','HH:MI'),
+    TO_DATE('29-MAY-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('29-MAY-2022 10:28:33', 'DD-MON-YYYY HH24:MI:SS'),
     5,
     NULL,
     2
@@ -535,8 +535,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     13,
     2,
-    TO_DATE('06:00','HH:MI'),
-    TO_DATE('07:45','HH:MI'),
+    TO_DATE('29-MAY-2022 09:00:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('29-MAY-2022 10:42:11', 'DD-MON-YYYY HH24:MI:SS'),
     2,
     NULL,
     1
@@ -546,8 +546,8 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     14,
     1,
-    NULL,
-    NULL,
+    TO_DATE('29-MAY-2022 08:30:00', 'DD-MON-YYYY HH24:MI:SS'),
+    TO_DATE('29-MAY-2022 11:20:27', 'DD-MON-YYYY HH24:MI:SS'),
     10,
     NULL,
     1
