@@ -245,13 +245,71 @@ INSERT INTO entry VALUES (
     )
 );
 
-
+COMMIT;
 
 
 
 --3(c)
 
+INSERT INTO team VALUES (
+    team_seq.NEXTVAL,
+    'Kai Speedstars',
+    (
+        SELECT
+            carn_date
+        FROM
+            carnival
+        WHERE
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    ),
+    1,
+    (
+        SELECT
+            event_id
+        FROM
+            entry
+        WHERE
+            comp_no = (
+                SELECT
+                    comp_no
+                FROM
+                    competitor
+                WHERE
+                        comp_fname = 'Annabelle'
+                    AND comp_lname = 'Kai'
+            )
+    ),
+    (
+        SELECT
+            entry_no
+        FROM
+            entry
+        WHERE
+            comp_no = (
+                SELECT
+                    comp_no
+                FROM
+                    competitor
+                WHERE
+                        comp_fname = 'Annabelle'
+                    AND comp_lname = 'Kai'
+            )
+    ),
+    (
+        SELECT
+            char_id
+        FROM
+            charity
+        WHERE
+            char_name = 'Beyond Blue'
+    )
+);
 
+
+UPDATE entry SET team_id = (SELECT team_id FROM team WHERE team_name = 'Kai Speedstars') 
+WHERE comp_no = (SELECT comp_no FROM competitor WHERE comp_fname = 'Annabelle' AND comp_lname = 'Kai');
+
+COMMIT;
 --3(d)
 
 
