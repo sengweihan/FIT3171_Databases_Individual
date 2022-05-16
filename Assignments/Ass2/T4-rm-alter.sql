@@ -21,6 +21,7 @@ COMMENT ON COLUMN entry.entry_elapsed_time IS 'runner''s elapsed time in an even
 
 
 
+
 --4(b)
 
 
