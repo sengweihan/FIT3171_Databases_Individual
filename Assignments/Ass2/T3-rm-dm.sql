@@ -451,3 +451,50 @@ WHERE
 COMMIT;
 --3(e)
 
+DELETE FROM entry
+WHERE
+    comp_no = (
+        SELECT
+            comp_no
+        FROM
+            competitor
+        WHERE
+                comp_fname = 'Daniel'
+            AND comp_lname = 'Kai'
+    );
+
+UPDATE entry
+SET
+    team_id = NULL,
+    char_id = (
+        SELECT
+            char_id
+        FROM
+            charity
+        WHERE
+            char_name = 'Beyond Blue'
+    )
+WHERE
+    comp_no = (
+        SELECT
+            comp_no
+        FROM
+            competitor
+        WHERE
+                comp_fname = 'Annabelle'
+            AND comp_lname = 'Kai'
+    );
+
+DELETE FROM team
+WHERE
+        team_name = 'Kai Speedstars'
+    AND carn_date = (
+        SELECT
+            carn_date
+        FROM
+            carnival
+        WHERE
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    );
+
+COMMIT;
