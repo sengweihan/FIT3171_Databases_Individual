@@ -15,7 +15,7 @@
 
 --4(a)
 
-ALTER TABLE entry ADD entry_elapsed_time NUMBER(5,2) DEFAULT NULL;
+ALTER TABLE entry ADD entry_elapsed_time NUMBER(5,2);
 
 COMMENT ON COLUMN entry.entry_elapsed_time IS 'runner''s elapsed time in an event';
 
