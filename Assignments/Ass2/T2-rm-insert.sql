@@ -251,7 +251,7 @@ INSERT INTO entry VALUES (
     TO_DATE('10:00:00', 'HH24:MI:SS'),
     TO_DATE('10:35:15', 'HH24:MI:SS'),
     1,
-    1,
+    NULL,
     NULL
 );
 
@@ -262,7 +262,7 @@ INSERT INTO entry VALUES (
     TO_DATE('10:00:00', 'HH24:MI:SS'),
     TO_DATE('10:45:25', 'HH24:MI:SS'),
     2,
-    1,
+    NULL,
     3
 );
 
@@ -272,7 +272,7 @@ INSERT INTO entry VALUES (
     TO_DATE('10:00:00', 'HH24:MI:SS'),
     TO_DATE('10:30:45', 'HH24:MI:SS'),
     3,
-    1,
+    NULL,
     2
 );
 
@@ -282,7 +282,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('10:14:11', 'HH24:MI:SS'),
     4,
-    1,
+    NULL,
     4
 );
 
@@ -312,7 +312,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:30:00', 'HH24:MI:SS'),
     TO_DATE('10:02:17', 'HH24:MI:SS'),
     1,
-    2,
+    NULL,
     4
 );
 
@@ -332,7 +332,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:30:00', 'HH24:MI:SS'),
     TO_DATE('09:58:45', 'HH24:MI:SS'),
     3,
-    2,
+    NULL,
     NULL
 );
 
@@ -342,7 +342,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('10:11:25', 'HH24:MI:SS'),
     4,
-    2,
+    NULL,
     2
 );
 
@@ -372,7 +372,7 @@ INSERT INTO entry VALUES (
     TO_DATE('08:30:00', 'HH24:MI:SS'),
     TO_DATE('10:25:26', 'HH24:MI:SS'),
     6,
-    2,
+    NULL,
     3
 );
 
@@ -412,7 +412,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('09:28:15', 'HH24:MI:SS'),
     2,
-    3,
+    NULL,
     1
 );
 
@@ -422,7 +422,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('09:15:48', 'HH24:MI:SS'),
     3,
-    3,
+    NULL,
     4
 );
 
@@ -454,7 +454,7 @@ INSERT INTO entry VALUES (
     NULL,
     NULL,
     10,
-    3,
+    NULL,
     2
 );
 
@@ -465,7 +465,7 @@ INSERT INTO entry VALUES (
     TO_DATE('08:30:00', 'HH24:MI:SS'),
     TO_DATE('10:05:13', 'HH24:MI:SS'),
     11,
-    3,
+    NULL,
     1
 );
 
@@ -485,7 +485,7 @@ INSERT INTO entry VALUES (
     TO_DATE('08:30:00', 'HH24:MI:SS'),
     TO_DATE('08:51:29', 'HH24:MI:SS'),
     13,
-    4,
+    NULL,
     NULL
 );
 
@@ -496,7 +496,7 @@ INSERT INTO entry VALUES (
     TO_DATE('08:30:00', 'HH24:MI:SS'),
     TO_DATE('08:47:42', 'HH24:MI:SS'),
     15,
-    4,
+    NULL,
     1
 );
 
@@ -518,7 +518,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('09:27:11', 'HH24:MI:SS'),
     2,
-    5,
+    NULL,
     1
 );
 
@@ -528,7 +528,7 @@ INSERT INTO entry VALUES (
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('10:28:33', 'HH24:MI:SS'),
     5,
-    5,
+    NULL,
     2
 );
 
@@ -549,7 +549,7 @@ INSERT INTO entry VALUES (
     TO_DATE('08:30:00', 'HH24:MI:SS'),
     TO_DATE('11:20:27', 'HH24:MI:SS'),
     10,
-    5,
+    NULL,
     1
 );
 
@@ -609,5 +609,46 @@ INSERT INTO team VALUES (
     1,
     4
 );
-    
+
+-- =============================================================
+-- Update entry table to insert the team_id since initially team table is not created when
+-- we are inserting data for entry table therefore, we set all the team_id in entry table to null.
+-- But since now team table is created , we can then update the entry table.
+-- =============================================================
+UPDATE entry SET team_id = 1 WHERE event_id = 1 AND entry_no = 1;
+
+UPDATE entry SET team_id = 1 WHERE event_id = 1 AND entry_no = 2;
+
+UPDATE entry SET team_id = 1 WHERE event_id = 1 AND entry_no = 3;
+
+UPDATE entry SET team_id = 1 WHERE event_id = 2 AND entry_no = 1;
+
+UPDATE entry SET team_id = 2 WHERE event_id = 3 AND entry_no = 1;
+
+UPDATE entry SET team_id = 2 WHERE event_id = 3 AND entry_no = 3;
+
+UPDATE entry SET team_id = 2 WHERE event_id = 4 AND entry_no = 1;
+
+UPDATE entry SET team_id = 2 WHERE event_id = 5 AND entry_no = 1;
+
+UPDATE entry SET team_id = 3 WHERE event_id = 6 AND entry_no = 2;
+
+UPDATE entry SET team_id = 3 WHERE event_id = 6 AND entry_no = 3;
+
+UPDATE entry SET team_id = 3 WHERE event_id = 8 AND entry_no = 1;
+
+UPDATE entry SET team_id = 3 WHERE event_id = 8 AND entry_no = 2;
+
+UPDATE entry SET team_id = 4 WHERE event_id = 10 AND entry_no = 1;
+
+UPDATE entry SET team_id = 4 WHERE event_id = 10 AND entry_no = 2;
+
+UPDATE entry SET team_id = 5 WHERE event_id = 12 AND entry_no = 1;
+
+UPDATE entry SET team_id = 5 WHERE event_id = 13 AND entry_no = 1;
+
+UPDATE entry SET team_id = 5 WHERE event_id = 14 AND entry_no = 1;
+
+
+
 COMMIT;
