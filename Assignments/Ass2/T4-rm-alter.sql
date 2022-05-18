@@ -98,4 +98,32 @@ COMMIT;
      
 --4(c)
 
+DROP TABLE official CASCADE CONSTRAINTS;
+
+CREATE TABLE official (
+    comp_no       NUMBER(5) NOT NULL,
+    carn_date     DATE NOT NULL,
+    official_role VARCHAR2(30) NOT NULL
+);
+
+COMMENT ON COLUMN official.comp_no IS
+    'Unique identifier for a competitor';
+
+COMMENT ON COLUMN official.carn_date IS
+    'Date of carnival (unique identifier)';
+
+COMMENT ON COLUMN official.carn_date IS
+    'Role of official in a carnival';
+
+ALTER TABLE official ADD CONSTRAINT official_pk PRIMARY KEY ( comp_no,
+                                                              carn_date );
+
+ALTER TABLE official
+    ADD CONSTRAINT competitor_official_fk FOREIGN KEY ( comp_no )
+        REFERENCES competitor ( comp_no );
+    
+    
+ALTER TABLE official
+    ADD CONSTRAINT carnival_official_fk FOREIGN KEY ( carn_date )
+        REFERENCES carnival ( carn_date );
 
