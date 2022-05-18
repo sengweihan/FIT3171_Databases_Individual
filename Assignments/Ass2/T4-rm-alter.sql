@@ -15,13 +15,15 @@
 
 --4(a)
 
-ALTER TABLE entry ADD entry_elapsed_time NUMBER(5,2);
+ALTER TABLE entry ADD entry_elapsed_time NUMBER(6,2);
 
 COMMENT ON COLUMN entry.entry_elapsed_time IS 'runner''s elapsed time in an event';
 
+UPDATE entry
+SET
+    entry_elapsed_time = nvl((entry_finishtime - entry_starttime) * 1440, 0);
 
-
-
+COMMIT;
 --4(b)
 
 
