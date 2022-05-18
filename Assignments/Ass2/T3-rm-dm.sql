@@ -263,37 +263,49 @@ INSERT INTO team VALUES (
             carn_name = 'RM Autumn Series Caulfield 2022'
     ),
     1,
+ (SELECT
+    entry.event_id
+FROM
+    (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Annabelle'
+    AND comp_lname = 'Kai'
+    AND carn_date = (
+        SELECT
+            carn_date
+        FROM
+            carnival
+        WHERE
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    )),
     (
         SELECT
-            event_id
-        FROM
-            entry
-        WHERE
-            comp_no = (
-                SELECT
-                    comp_no
-                FROM
-                    competitor
-                WHERE
-                        comp_fname = 'Annabelle'
-                    AND comp_lname = 'Kai'
-            )
-    ),
+    entry.entry_no
+FROM
     (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Annabelle'
+    AND comp_lname = 'Kai'
+    AND carn_date = (
         SELECT
-            entry_no
+            carn_date
         FROM
-            entry
+            carnival
         WHERE
-            comp_no = (
-                SELECT
-                    comp_no
-                FROM
-                    competitor
-                WHERE
-                        comp_fname = 'Annabelle'
-                    AND comp_lname = 'Kai'
-            )
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    )
     ),
     (
         SELECT
@@ -316,15 +328,46 @@ SET
             team_name = 'Kai Speedstars'
     )
 WHERE
-    comp_no = (
+    event_id = (
         SELECT
-            comp_no
+    entry.event_id
+FROM
+    (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Annabelle'
+    AND comp_lname = 'Kai'
+    AND carn_date = (
+        SELECT
+            carn_date
         FROM
-            competitor
+            carnival
         WHERE
-                comp_fname = 'Annabelle'
-            AND comp_lname = 'Kai'
-    );
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    ) 
+    ) AND entry_no =(SELECT
+    entry.entry_no
+FROM
+    (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Annabelle'
+    AND comp_lname = 'Kai' AND carn_date = ( SELECT
+                      carn_date
+                  FROM
+                      carnival
+                  WHERE
+                      carn_name = 'RM Autumn Series Caulfield 2022'));
 
 COMMIT;
 --3(d)
@@ -403,13 +446,29 @@ SET
 WHERE
     comp_no = (
         SELECT
-            comp_no
+    entry.comp_no
+FROM
+    (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Daniel'
+    AND comp_lname = 'Kai'
+    AND carn_date = (
+        SELECT
+            carn_date
         FROM
-            competitor
+            carnival
         WHERE
-                comp_fname = 'Daniel'
-            AND comp_lname = 'Kai'
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    )
     );
+    
+
 
 
 UPDATE team
@@ -454,14 +513,30 @@ COMMIT;
 DELETE FROM entry
 WHERE
     comp_no = (
+SELECT
+    entry.comp_no
+FROM
+    (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Daniel'
+    AND comp_lname = 'Kai'
+    AND carn_date = (
         SELECT
-            comp_no
+            carn_date
         FROM
-            competitor
+            carnival
         WHERE
-                comp_fname = 'Daniel'
-            AND comp_lname = 'Kai'
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    )
     );
+    
+
 
 UPDATE entry
 SET
@@ -477,13 +552,28 @@ SET
 WHERE
     comp_no = (
         SELECT
-            comp_no
+    entry.comp_no
+FROM
+    (
+             competitor
+        JOIN entry
+        ON competitor.comp_no = entry.comp_no
+    )
+    JOIN event
+    ON event.event_id = entry.event_id
+WHERE
+        comp_fname = 'Annabelle'
+    AND comp_lname = 'Kai'
+    AND carn_date = (
+        SELECT
+            carn_date
         FROM
-            competitor
+            carnival
         WHERE
-                comp_fname = 'Annabelle'
-            AND comp_lname = 'Kai'
+            carn_name = 'RM Autumn Series Caulfield 2022'
+    )
     );
+
 
 DELETE FROM team
 WHERE
@@ -496,5 +586,5 @@ WHERE
         WHERE
             carn_name = 'RM Autumn Series Caulfield 2022'
     );
-
+    
 COMMIT;
