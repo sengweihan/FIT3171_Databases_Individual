@@ -30,9 +30,9 @@ COMMIT;
 DROP TABLE team_charity CASCADE CONSTRAINTS;
 
 CREATE TABLE team_charity (
-    char_id                 NUMBER(3),
+    char_id                 NUMBER(3) NOT NULL,
     team_id                 NUMBER(3) NOT NULL,
-    team_charity_percentage NUMBER(3)
+    team_charity_percentage NUMBER(3) NOT NULL
 );
 
 Comment ON COLUMN team_charity.char_id IS 
@@ -97,13 +97,35 @@ COMMIT;
 
      
 --4(c)
+-- Since the questions stated that the list of roles may be expanded as required
+-- meaning to say the list of roles is a look up table hence we will need to 
+-- create a table for the roles as lookup table.
+
+DROP TABLE officialrole CASCADE CONSTRAINTS;
+
+CREATE TABLE officialrole (
+    officialrole_code NUMBER(3) NOT NULL,
+    officialrole_desc VARCHAR2(30) NOT NULL
+);
+
+COMMENT ON COLUMN officialrole.officialrole_code IS
+    'Code of officialrole (unique identifier)';
+
+COMMENT ON COLUMN officialrole.officialrole_desc IS
+    'The description role of official in a carnival';
+
+
+ALTER TABLE officialrole ADD CONSTRAINT officialrole_pk PRIMARY KEY ( officialrole_code);
+
+ALTER TABLE officialrole ADD CONSTRAINT officialrole_uq UNIQUE (officialrole_desc);
+
 
 DROP TABLE official CASCADE CONSTRAINTS;
 
 CREATE TABLE official (
-    comp_no       NUMBER(5) NOT NULL,
-    carn_date     DATE NOT NULL,
-    official_role VARCHAR2(30) NOT NULL
+    comp_no           NUMBER(5) NOT NULL,
+    carn_date         DATE NOT NULL,
+    officialrole_code NUMBER(3) NOT NULL
 );
 
 COMMENT ON COLUMN official.comp_no IS
@@ -112,8 +134,8 @@ COMMENT ON COLUMN official.comp_no IS
 COMMENT ON COLUMN official.carn_date IS
     'Date of carnival (unique identifier)';
 
-COMMENT ON COLUMN official.carn_date IS
-    'Role of official in a carnival';
+COMMENT ON COLUMN official.officialrole_code IS 
+    'Code of officialrole (unique identifier)';
 
 ALTER TABLE official ADD CONSTRAINT official_pk PRIMARY KEY ( comp_no,
                                                               carn_date );
@@ -121,9 +143,15 @@ ALTER TABLE official ADD CONSTRAINT official_pk PRIMARY KEY ( comp_no,
 ALTER TABLE official
     ADD CONSTRAINT competitor_official_fk FOREIGN KEY ( comp_no )
         REFERENCES competitor ( comp_no );
-    
-    
+        
+
 ALTER TABLE official
     ADD CONSTRAINT carnival_official_fk FOREIGN KEY ( carn_date )
         REFERENCES carnival ( carn_date );
+    
 
+ALTER TABLE official
+    ADD CONSTRAINT officialrole_official_fk FOREIGN KEY ( officialrole_code )
+        REFERENCES officialrole ( officialrole_code );
+    
+                                                            
