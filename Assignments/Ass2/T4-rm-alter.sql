@@ -154,4 +154,29 @@ ALTER TABLE official
     ADD CONSTRAINT officialrole_official_fk FOREIGN KEY ( officialrole_code )
         REFERENCES officialrole ( officialrole_code );
     
-                                                            
+    
+
+-- POPULATING THE TABLES 
+-- INSERT DATA INTO OFFICIALROLE TABLE.
+INSERT INTO officialrole VALUES (
+    1,
+    'time keeper'
+);
+
+INSERT INTO officialrole VALUES (
+    2,
+    'marshal'
+);
+
+INSERT INTO officialrole VALUES (
+    3,
+    'starter'
+);
+
+INSERT INTO officialrole VALUES (
+    4,
+    'first aid'
+);
+
+
+COMMIT;
