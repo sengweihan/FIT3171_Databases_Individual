@@ -62,7 +62,7 @@ INSERT INTO entry VALUES (
     1,
     NULL,
     3,
-    0
+    NULL
 );
 
 -- AFTER
@@ -83,7 +83,7 @@ INSERT INTO entry VALUES (
     1,
     NULL,
     2,
-    0
+    NULL
 );
 
 -- AFTER 
@@ -92,8 +92,25 @@ SELECT * FROM entry;
 rollback;
 --5(b)
 
+-- ADD TWO NEW ATTRIBUTES IN EVENTTYPE NAMED eventtype_record and eventtype_recordholder.
+
+ALTER TABLE eventtype ADD eventtype_record NUMBER(6,2) ;
+
+ALTER TABLE eventtype ADD eventtype_recordholder NUMBER(5);
+
+COMMENT ON COLUMN eventtype.eventtype_record IS
+    'fastest elapsed time for each event type';
+    
+COMMENT ON COLUMN eventtype.eventtype_recordholder IS
+    'competitor (competitor number) who holds the record';
+    
+
 
 -- Test harness for 5(b)
+--BEGIN 
+
+
+
 
 --5(c)
 
