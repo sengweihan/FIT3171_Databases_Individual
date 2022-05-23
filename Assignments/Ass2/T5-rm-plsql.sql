@@ -105,10 +105,41 @@ COMMENT ON COLUMN eventtype.eventtype_recordholder IS
     'competitor (competitor number) who holds the record';
     
 
+CREATE OR REPLACE TRIGGER update_eventtype_trigger AFTER
+    UPDATE OF entry_finishtime ON entry
+FOR EACH ROW 
+
+DECLARE 
+    elapsedtime   entry.entry_elapsed_time%type;
+    eventtypecode eventtype.eventtype_code%type;
+    currenttime   eventtype.eventtype_record%type;
+    competitor    entry.comp_no%type;
+
+BEGIN
+
+    SELECT eventtype_code INTO eventtypecode FROM event WHERE event_id = :old.event_id;
+    
+    SELECT TRUNC((:new.entry_finishtime - :old.entry_starttime)*1440,2) INTO elapsedtime 
+    FROM event JOIN entry ON event.event_id = entry.event_id WHERE entry.event_id = :old.event_id AND entry_no = :old.entry_no;
+    
+    SELECT :old.comp_no INTO competitor
+    FROM event JOIN entry ON event.event_id = entry.event_id WHERE entry.event_id = :old.event_id AND entry_no = :old.entry_no;
+    
+    SELECT eventtype_record INTO currenttime FROM eventtype WHERE eventtype_code = eventtypecode;
+    
+    IF (currenttime IS NULL ) THEN 
+    UPDATE eventtype SET eventtype_record = elapsedtime , eventtype_recordholder = competitor;
+    
+    ELSIF (currenttime IS NOT NULL AND elapsedtime < currenttime) THEN 
+    UPDATE eventtype SET eventtype_record = elapsedtime , eventtype_recordholder = competitor;
+    
+    END IF;
+    
+END;
+/
+
 
 -- Test harness for 5(b)
---BEGIN 
-
 
 
 
