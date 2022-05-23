@@ -35,18 +35,25 @@ WHERE
         comp_no = :new.comp_no
     AND carn_date = chk_date;
     
-    IF ( competitor_event_count <> 0 ) THEN
+    IF( competitor_event_count <> 0 ) THEN
     raise_application_error(-20000,'Competitor cannot enroll in multiple events in the same carnival');
     
-    END IF ;
+    ELSE 
+        dbms_output.put_line('Record is successfully inserted');
+    
+    END IF;
 
 END;
 /
 
 
 -- Test Harness for 5(a) --
+-- TEST CASE 1
+-- BEFORE
 SELECT * FROM entry;
 
+-- EXECUTING TRIGGER 
+-- FAIL
 INSERT INTO entry VALUES (
     2,
     100,
@@ -58,6 +65,28 @@ INSERT INTO entry VALUES (
     0
 );
 
+-- AFTER
+SELECT * FROM entry;
+
+
+-- TEST 2 
+-- BEFORE 
+SELECT * FROM entry;
+
+-- EXECUTING THE TRIGGER
+-- SUCCESS
+INSERT INTO entry VALUES (
+    14,
+    100,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    2,
+    0
+);
+
+-- AFTER 
 SELECT * FROM entry;
 
 rollback;
