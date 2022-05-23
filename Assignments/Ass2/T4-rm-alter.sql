@@ -21,7 +21,7 @@ COMMENT ON COLUMN entry.entry_elapsed_time IS 'runner''s elapsed time in an even
 
 UPDATE entry
 SET
-    entry_elapsed_time = nvl((entry_finishtime - entry_starttime) * 1440, 0);
+    entry_elapsed_time = TRUNC((entry_finishtime - entry_starttime) * 1440,2);
 
 COMMIT;
 --4(b)
