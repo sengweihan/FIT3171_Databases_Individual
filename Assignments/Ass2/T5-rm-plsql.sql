@@ -105,7 +105,7 @@ COMMENT ON COLUMN eventtype.eventtype_recordholder IS
     'competitor (competitor number) who holds the record';
     
 
-CREATE OR REPLACE TRIGGER update_eventtype_trigger AFTER
+CREATE OR REPLACE TRIGGER update_eventtype_trigger BEFORE
     UPDATE OF entry_finishtime ON entry
 FOR EACH ROW 
 
@@ -117,21 +117,41 @@ DECLARE
 
 BEGIN
 
-    SELECT eventtype_code INTO eventtypecode FROM event WHERE event_id = :old.event_id;
+    SELECT eventtype_code INTO eventtypecode FROM event WHERE event_id = :new.event_id;
     
-    SELECT TRUNC((:new.entry_finishtime - :old.entry_starttime)*1440,2) INTO elapsedtime 
-    FROM event JOIN entry ON event.event_id = entry.event_id WHERE entry.event_id = :old.event_id AND entry_no = :old.entry_no;
+   -- SELECT TRUNC((:new.entry_finishtime - :old.entry_starttime)*1440,2) INTO elapsedtime 
+    --FROM event JOIN entry ON event.event_id = entry.event_id WHERE entry.event_id = :old.event_id AND entry_no = :old.entry_no;
     
-    SELECT :old.comp_no INTO competitor
-    FROM event JOIN entry ON event.event_id = entry.event_id WHERE entry.event_id = :old.event_id AND entry_no = :old.entry_no;
+    --SELECT :old.comp_no INTO competitor
+    --FROM event JOIN entry ON event.event_id = entry.event_id WHERE entry.event_id = :old.event_id AND entry_no = :old.entry_no;
+    
+    --SELECT TRUNC((:new.entry_finishtime - :new.entry_starttime)*1440,2) INTO elapsedtime FROM entry
+    -- WHERE event_id = :old.event_id AND entry_no = :old.entry_no;
+    
+    IF (:new.entry_finishtime IS NOT NULL) THEN
+        elapsedtime := TRUNC((:new.entry_finishtime - :new.entry_starttime)*1440,2);
+    END IF;
+    
+    IF (:new.entry_finishtime IS NOT NULL) THEN
+        competitor := :new.comp_no;
+    END IF;
+    
+    :new.entry_elapsed_time := elapsedtime;
+    
+   -- SELECT comp_no INTO competitor FROM entry
+    --WHERE event_id = :old.event_id AND entry_no = :old.entry_no;
+    
+   -- UPDATE entry SET entry_elapsed_time = elapsedtime WHERE event_id = :old.event_id AND entry_no = :old.entry_no;
     
     SELECT eventtype_record INTO currenttime FROM eventtype WHERE eventtype_code = eventtypecode;
     
     IF (currenttime IS NULL ) THEN 
-    UPDATE eventtype SET eventtype_record = elapsedtime , eventtype_recordholder = competitor;
+    UPDATE eventtype SET eventtype_record = elapsedtime , eventtype_recordholder = competitor
+    WHERE eventtype_code = eventtypecode;
     
     ELSIF (currenttime IS NOT NULL AND elapsedtime < currenttime) THEN 
-    UPDATE eventtype SET eventtype_record = elapsedtime , eventtype_recordholder = competitor;
+    UPDATE eventtype SET eventtype_record = elapsedtime , eventtype_recordholder = competitor
+    WHERE eventtype_code = eventtypecode;
     
     END IF;
     
@@ -140,9 +160,37 @@ END;
 
 
 -- Test harness for 5(b)
+SELECT * FROM entry;
 
+INSERT INTO entry VALUES (
+    14,
+    4,
+    NULL,
+    NULL,
+    1,
+    NULL,
+    NULL,
+    NULL
+);
 
+SELECT * FROM entry;
 
+UPDATE entry SET entry_finishtime = TO_DATE('11:35:30', 'HH24:MI:SS'), entry_starttime = TO_DATE('08:30:10', 'HH24:MI:SS')
+WHERE event_id = 14 AND entry_no =4 AND comp_no =1;
+
+select * from entry;
+
+INSERT INTO entry VALUES (
+    14,
+    4,
+    NULL,
+    NULL,
+    2,
+    NULL,
+    NULL,
+    NULL
+);
+rollback;
 --5(c)
 
 -- Test Harness for 5(c)

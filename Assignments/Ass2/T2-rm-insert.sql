@@ -537,7 +537,7 @@ INSERT INTO entry VALUES (
     2,
     TO_DATE('09:00:00', 'HH24:MI:SS'),
     TO_DATE('10:42:11', 'HH24:MI:SS'),
-    2,
+    15,
     NULL,
     1
 );
