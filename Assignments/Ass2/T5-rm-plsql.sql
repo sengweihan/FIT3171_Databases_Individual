@@ -121,7 +121,7 @@ BEGIN
 
     
     IF (:new.entry_finishtime IS NOT NULL) THEN
-        elapsedtime := TRUNC((:new.entry_finishtime - :new.entry_starttime)*1440,2);
+        elapsedtime := ROUND((:new.entry_finishtime - :new.entry_starttime)*1440,2);
     END IF;
     
     IF (:new.entry_finishtime IS NOT NULL) THEN

@@ -494,7 +494,7 @@ INSERT INTO entry VALUES (
     10,
     2,
     TO_DATE('08:30:00', 'HH24:MI:SS'),
-    TO_DATE('08:47:42', 'HH24:MI:SS'),
+    TO_DATE('08:47:48', 'HH24:MI:SS'),
     15,
     NULL,
     1
@@ -503,7 +503,7 @@ INSERT INTO entry VALUES (
 INSERT INTO entry VALUES (
     11,
     1,
-    TO_DATE('08:00:00', 'HH24:MI:SS'),
+    TO_DATE('08:00:25', 'HH24:MI:SS'),
     TO_DATE('14:55:12', 'HH24:MI:SS'),
     14,
     NULL,
